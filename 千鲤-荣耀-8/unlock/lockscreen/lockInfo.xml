@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lockInfo>
+    <!-- 锁屏资源包名称，选填 -->
+    <name>Concept 3</name>
+    <!-- 作者名称，选填 -->
+    <author>壮兔dorunto</author>
+    <!-- 锁屏资源版本，选填 -->
+    <versionCode>1</versionCode>
+    <!-- 锁屏资源脚本文件路径，必填，当前固定为manifest.xml -->
+    <scriptFile>manifest.xml</scriptFile>
+    <!-- 锁屏资源脚本文件类型，必填，当前固定为xml -->
+    <scriptFormat>xml</scriptFormat>
+    <!-- 锁屏资源编辑版本，新玩法和数据主题锁屏资源固定是200，必填 -->
+    <editorVersion>200</editorVersion>
+</lockInfo>

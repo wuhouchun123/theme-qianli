@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<OplusSmartPhoneThemeInfo>
+  <Author>壮兔dorunto</Author>
+  <Summary>千鲤</Summary>
+  <Description>
+    注意：桌面空白长按-图标，可以放大图标。
+    【主题介绍】
+    《千鲤》：我没有尝试过的风格的主题，未来计划做更多风格不同的主题。
+    锁屏：
+    1. 3种时间样式，
+    2. 波纹充电动画
+    3. 快捷app
+    桌面：
+    1. 扁平又立体的图标
+    2. 第三方图标适配1550+，持续适配中。
+    3. 原创壁纸
+    【解锁方式】
+    上滑解锁
+    【问题反馈】
+    对主题有任何疑问/想知道新主题最新动态，欢迎加入QQ售后群：1760232137
+    【注意事项】
+    1. 由于系统原因，应用暗色模式后，全局主题只保留锁屏及桌面壁纸。
+    2. 因Android版本等原因，部分机型锁屏设置可能无法记忆，请适用后再购买。
+    【适配系统】
+    ColorOS14
+  </Description>
+  <EditorVersion>14000</EditorVersion>
+  <LastModifyTime>2023-11-17 14:50:53</LastModifyTime>
+  <IsGlobalTheme>1</IsGlobalTheme>
+  <UUID>D644A1D1369D471EB7FC0A2BC93B4547</UUID>
+  <PackageName>D644A1D1369D471EB7FC0A2BC93B4547</PackageName>
+  <StandardVersion>1</StandardVersion>
+  <VersionName>1</VersionName>
+  <VersionCode>2</VersionCode>
+  <disableLockPictorial>1</disableLockPictorial>
+  <enableLauncherApplyEffect>1</enableLauncherApplyEffect>
+  <packageInfo>
+    <package name="assets" version="001"/>
+    <package name="com.android.contacts" version="002"/>
+    <package name="com.android.incallui" version="002"/>
+    <package name="com.android.launcher" version="001"/>
+    <package name="com.android.mms" version="005"/>
+    <package name="com.android.settings" version="001,002"/>
+    <package name="com.android.systemui" version="001"/>
+    <package name="com.coloros.alarmclock" version="001,002"/>
+    <package name="com.coloros.scenemode" version="001"/>
+    <package name="icons" version="001"/>
+    <package name="lockscreen" version="001"/>
+    <package name="picture" version="001"/>
+    <package name="wallpaper" version="001"/>
+  </packageInfo>
+  <resolutionInfo>
+    <resolution>1920*1080</resolution>
+    <resolution>960*540</resolution>
+  </resolutionInfo>
+  <AutoGenerate>1</AutoGenerate>
+</OplusSmartPhoneThemeInfo>
