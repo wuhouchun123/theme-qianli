@@ -25,12 +25,12 @@
     ColorOS15
   </Description>
   <EditorVersion>15000</EditorVersion>
-  <LastModifyTime>2025-06-13 15:58:32</LastModifyTime>
+  <LastModifyTime>2025-08-05 15:10:34</LastModifyTime>
   <IsGlobalTheme>1</IsGlobalTheme>
   <UUID>D644A1D1369D471EB7FC0A2BC93B4547</UUID>
   <PackageName>D644A1D1369D471EB7FC0A2BC93B4547</PackageName>
   <StandardVersion>1</StandardVersion>
-  <VersionName>2.0.0</VersionName>
+  <VersionName>8.0.0</VersionName>
   <VersionCode>8</VersionCode>
   <disableLockPictorial>1</disableLockPictorial>
   <enableLauncherApplyEffect>1</enableLauncherApplyEffect>
@@ -39,7 +39,7 @@
     <package name="com.android.contacts" version="003"/>
     <package name="com.android.incallui" version="003"/>
     <package name="com.android.launcher" version="001"/>
-    <package name="com.android.mms" version="006"/>
+    <package name="com.android.mms" version="005,006"/>
     <package name="com.android.settings" version="001"/>
     <package name="com.android.systemui" version="001"/>
     <package name="com.coloros.alarmclock" version="002"/>
