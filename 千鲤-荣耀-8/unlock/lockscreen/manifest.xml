@@ -84,12 +84,12 @@
 	<ExternalCommands>
 		<Trigger action="resume">
 			<VariableCommand expression="0" name="chongdian_2_onoff" />
-			<VariableCommand expression="0" name="move_x" />
+			<!-- <VariableCommand expression="0" name="move_x" /> -->
 			<VariableCommand expression="0" name="move_y" />
-			<VariableCommand expression="0" name="#slider.move_x" />
+			<!-- <VariableCommand expression="0" name="#slider.move_x" /> -->
 			<VariableCommand expression="0" name="kaishi" />
 			<VariableCommand expression="1" name="zheng" />
-			<VariableCommand expression="0" name="diy_onoff" />
+			<!-- <VariableCommand expression="0" name="diy_onoff" /> -->
 			<VariableCommand expression="0" name="diy_btn" />
 			<VariableCommand expression="0" name="xiangji_changan" />
 		</Trigger>
@@ -97,8 +97,8 @@
 			<SoundCommand sound="kong.mp3" volume="0" loop="false" keepCur="false" />
 		</Trigger>
 	</ExternalCommands>
-	<Var name="move_x" expression="ifelse(le(#kaishi+#slider.move_x,0),0,ge(#kaishi+#slider.move_x,1080),1080,#kaishi+#slider.move_x)" visibility="ne(#shijian,14)*eq(#kuaijie_app,0)" />
-	<Var name="move_x" expression="0" visibility="eq(#shijian,14)*eq(#kuaijie_app,0)" />
+	<!-- <Var name="move_x" expression="ifelse(le(#kaishi+#slider.move_x,0),0,ge(#kaishi+#slider.move_x,1080),1080,#kaishi+#slider.move_x)" visibility="ne(#shijian,14)*eq(#kuaijie_app,0)" /> -->
+	<Var name="move_x" expression="0"/>
 	<!-- <Var name="move_x" expression="0" /> -->
 	<Var name="TimeAlpha_2" expression="#move_x/1080*450" />
 	<Slider bounceInitSpeed="3000" bounceAcceleration="3000" name="slider" visibility="ne(#shijian,14)*eq(#kuaijie_app,0)">
@@ -188,7 +188,7 @@
 			<!-- 时间样式2 -->
 			<Group x="#screen_width/2" y="300+60" align="center" alignV="center">
 				<!-- 字体0 -->
-				<Group visibility="eq(#shijian,0)+eq(#shijian,2)+eq(#shijian,3)+eq(#shijian,4)+eq(#shijian,5)+eq(#shijian,6)">
+				<Group visibility="eq(#shijian,0)">
 					<Group visibility="eq(#ziti,0)">
 						<Group visibility="eq(#heibai,0)">
 							<!-- <Image x="0" y="-55" align="center" alignV="center" scale="1" src="img/time_0.png" alpha="255" visibility="eq(#shijian,0)" /> -->
@@ -205,7 +205,7 @@
 					</Group>
 					<DateTime x="0" y="276+15" align="center" alignV="center" size="42" color="#ffffff" format="M月d日 EEEE 农历NNNN" alpha="255" visibility="eq(#heibai,0)" />
 				</Group>
-				<Group visibility="eq(#shijian,7)">
+				<Group visibility="eq(#shijian,1)">
 					<Group visibility="eq(#ziti,0)">
 						<Group visibility="eq(#heibai,0)">
 							<Image x="3" y="-55+70" align="center" alignV="center" scale="1" src="img/time_7.png" alpha="255" visibility="eq(#shijian,7)" />
@@ -394,7 +394,7 @@
 	</Group>
 	
 	<!-- 左侧屏 -->
-	<Group x="#move_x-#screen_width" y="1000+#move_y/5" align="left" alignV="top" >
+	<Group x="0" y="1000+#move_y/5" align="left" alignV="top" visibility="eq(#diy_onoff,1)" >
 		<Image x="#screen_width/2" y="0" align="center" alignV="top" src="img/ce_kuai.png" />
 
 		<!-- <Image x="73" y="0" w="533" h="352" align="left" alignV="top" src="img/test2.png" />
@@ -409,7 +409,7 @@
 		<Image x="73+723" y="819" w="208" h="208" align="left" alignV="top" src="img/test2.png" /> -->
 
 		<!-- 相册- -->
-		<Button x="73" y="0" w="533" h="352" visibility="eq(#diy_onoff,0)">
+		<Button x="73" y="0" w="533" h="352" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.hihonor.photos" class="com.hihonor.gallery.app.GalleryMain" />
@@ -418,7 +418,7 @@
 			</Triggers>
 		</Button>
 		<!-- 支付宝- -->
-		<Button x="73+583" y="0" w="348" h="348" visibility="eq(#diy_onoff,0)">
+		<Button x="73+583" y="0" w="348" h="348" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.eg.android.AlipayGphone" class="com.eg.android.AlipayGphone.AlipayLogin" />
@@ -427,7 +427,7 @@
 			</Triggers>
 		</Button>
 		<!-- 录音机- -->
-		<Button x="73" y="409" w="348" h="160" visibility="eq(#diy_onoff,0)">
+		<Button x="73" y="409" w="348" h="160" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.hihonor.soundrecorder" class="com.android.soundrecorder.RecordListActivity" />
@@ -436,7 +436,7 @@
 			</Triggers>
 		</Button>
 		<!-- QQ- -->
-		<Button x="73" y="601" w="348" h="160" visibility="eq(#diy_onoff,0)">
+		<Button x="73" y="601" w="348" h="160" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.tencent.mobileqq" class="com.tencent.mobileqq.activity.SplashActivity" />
@@ -445,7 +445,7 @@
 			</Triggers>
 		</Button>
 		<!-- 微信 -->
-		<Button x="73+399" y="409" w="242" h="352" visibility="eq(#diy_onoff,0)">
+		<Button x="73+399" y="409" w="242" h="352" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.tencent.mm" class="com.tencent.mm.ui.LauncherUI" />
@@ -454,7 +454,7 @@
 			</Triggers>
 		</Button>
 		<!-- 抖音- -->
-		<Button x="73+689" y="409" w="242" h="352" visibility="eq(#diy_onoff,0)">
+		<Button x="73+689" y="409" w="242" h="352" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.ss.android.ugc.aweme" class="com.ss.android.ugc.aweme.splash.SplashActivity" />
@@ -463,7 +463,7 @@
 			</Triggers>
 		</Button>
 		<!-- 支付宝扫一扫- -->
-		<Button x="73" y="819" w="208" h="208" visibility="eq(#diy_onoff,0)">
+		<Button x="73" y="819" w="208" h="208" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.eg.android.AlipayGphone" class="com.alipay.mobile.scan.as.main.MainCaptureActivity" />
@@ -472,7 +472,7 @@
 			</Triggers>
 		</Button>
 		<!-- 支付宝支付- -->
-		<Button x="73+239" y="819" w="208" h="208" visibility="eq(#diy_onoff,0)">
+		<Button x="73+239" y="819" w="208" h="208" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.eg.android.AlipayGphone" class="com.eg.android.AlipayGphone.FastStartActivity" />
@@ -481,7 +481,7 @@
 			</Triggers>
 		</Button>
 		<!-- 微信扫一扫- -->
-		<Button x="73+481" y="819" w="208" h="208" visibility="eq(#diy_onoff,0)">
+		<Button x="73+481" y="819" w="208" h="208" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.tencent.mm" class="com.tencent.mm.plugin.scanner.ui.BaseScanUI" />
@@ -490,7 +490,7 @@
 			</Triggers>
 		</Button>
 		<!-- 微信支付- -->
-		<Button x="73+723" y="819" w="208" h="208" visibility="eq(#diy_onoff,0)">
+		<Button x="73+723" y="819" w="208" h="208" visibility="eq(#diy_onoff,1)">
 			<Triggers>
 				<Trigger action="up">
 					<IntentCommand action="android.intent.action.MAIN" package="com.tencent.mm" class="com.tencent.mm.plugin.offline.ui.WalletOfflineEntranceUI" />
@@ -511,8 +511,8 @@
 					<Position x="0" y="-1100" time="150"/>
 				</PositionAnimation> 
 			</Rectangle> -->
-			<Image x="#screen_width/2" y="#screen_height" w="1080" h="1340" align="center" alignV="bottom" src="img/beiban.png"></Image>
-			<Group x="#screen_width/2" y="#screen_height-125" align="center" alignV="center">						
+			<!-- <Image x="#screen_width/2" y="#screen_height" w="1080" h="1340" align="center" alignV="bottom" src="img/beiban.png"></Image> -->
+			<!-- <Group x="#screen_width/2" y="#screen_height-125" align="center" alignV="center">						 -->
 				<!-- <Button x="-400-30" y="-50-30" w="120" h="120">
 					<Triggers>
 						<Trigger action="up">
@@ -527,32 +527,32 @@
 						</Trigger>
 					</Triggers>
 				</Button> -->
-				<Button x="270-30-18" y="-45-30+24" w="242" h="160">
+				<!-- <Button x="270-30-18" y="-45-30+24" w="242" h="160">
 					<Triggers>
 						<Trigger action="up">
 							<VariableCommand expression="0" name="diy_onoff" />
 						</Trigger>
 					</Triggers>
 				</Button>
-			</Group>
+			</Group> -->
 			<!-- diy_时间样式 -->
-			<Group x="#screen_width/2" y="#screen_height-450-460" align="center" alignV="center" visibility="eq(#diy_btn,0)">
+			<!-- <Group x="#screen_width/2" y="#screen_height-450-460" align="center" alignV="center" visibility="eq(#diy_btn,0)">
 				<Image x="0" y="0" align="center" alignV="center" src="img/diy_1_baise.png" visibility="eq(#heibai,0)" >
 				</Image>
 				<Image x="0" y="450+460-140" align="center" alignV="center" src="img/btn.png" visibility="eq(#heibai,0)" >
-				</Image>
+				</Image> -->
 
 				<!-- <Image x="-470+460*0" y="-300+239*0" align="left" alignV="top" src="img/test.png" >
 				</Image> -->
 									
-				<Button x="-470+240*0" y="-300+312*0" w="218" h="290">
+				<!-- <Button x="-470+240*0" y="-300+312*0" w="218" h="290">
 					<Triggers>
 						<Trigger action="up">
 							<VariableCommand expression="0" name="shijian" persist="true" delay="0" />
 						</Trigger>
 					</Triggers>
-				</Button>
-				<Button x="-470+240*1" y="-300+312*0" w="218" h="290">
+				</Button> -->
+				<!-- <Button x="-470+240*1" y="-300+312*0" w="218" h="290">
 					<Triggers>
 						<Trigger action="up">
 							<VariableCommand expression="1" name="shijian" persist="true" delay="0" />
@@ -600,19 +600,21 @@
 							<VariableCommand expression="7" name="shijian" persist="true" delay="0" />
 						</Trigger>
 					</Triggers>
-				</Button>			
-			</Group>
+				</Button>			 -->
+			<!-- </Group> -->
 		</Group>
 	</Group>
 	<!-- 底部 -->
-	<Group x="#move_x" y="#screen_height-(120)+#move_y/5" visibility="eq(#diy_onoff,0)" alpha="200">
-		<Image align="center" alignV="center" name="DefaultScreen_leftIcon" scale="1" src="img/left_icon.png" srcExp="默认" x="100" y="0" visibility="eq(#heibai,0)*eq(#dibu_xianshi,0)" />
+	<Group x="#move_x" y="#screen_height-(120)+#move_y/5" alpha="200">
+		<Image align="center" alignV="center" name="DefaultScreen_leftIcon" scale="1" src="img/left_icon.png" srcExp="默认" x="100" y="0" visibility="eq(#heibai,0)*eq(#dibu_xianshi,0)*eq(#diy_onoff,0)" />
+
+		<Image align="center" alignV="center" name="DefaultScreen_leftIcon" scale="1" src="img/left_icon_2.png" srcExp="默认" x="100" y="0" visibility="eq(#heibai,0)*eq(#dibu_xianshi,0)*eq(#diy_onoff,1)" />
 		<Image align="center" alignV="center" name="DefaultScreen_rightIcon" scale="1" src="img/right_icon.png" srcExp="默认" x="#screen_width-(100)" y="0" visibility="eq(#heibai,0)*eq(#dibu_xianshi,0)" />
 		<Image align="center" alignV="center" src="app/line1.png" x="#screen_width/2" y="0" />
 		<Button x="100-70/2" y="0-70/2" h="70" w="70">
 			<Triggers>
 				<Trigger action="up">
-					<VariableCommand expression="1" name="diy_onoff" />
+					<VariableCommand expression="ifelse(eq(#diy_onoff,1),0,1)" name="diy_onoff" />
 				</Trigger>
 			</Triggers>
 		</Button>
